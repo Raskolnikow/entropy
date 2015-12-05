@@ -1,0 +1,10 @@
+{
+  "name": "entropy",
+  "version": "0.0.1",
+  "description": "Slots game entropy",
+  "dependencies": {
+    "express": "^4.13.3",
+    "mocha": "^2.3.4",
+    "underscore": "^1.8.3"
+  }
+}
