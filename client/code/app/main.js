@@ -1,6 +1,5 @@
 /**
  * Main entry point for the application
- *
  * 
  */
 define(function(require) {
@@ -8,6 +7,14 @@ define(function(require) {
 	console.log("creating canvas app");
 
 	var ctx = require('./leinwand.js').getContext();
+    
+    // --------------------------------------------------------------------- //
+
+    /*
+        Das ist ein riesen batzen an quelcode, das hier eingefügt wird.
+        Was meinst du, sollte es dennn anders sein.
+
+    */
 
 	ctx.fillStyle = "#111111"
 	ctx.fillRect(0, 0, 500, 300);
