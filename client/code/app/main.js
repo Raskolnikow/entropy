@@ -7,50 +7,30 @@ define(function(require) {
 	console.log("creating canvas app");
 
 	var ctx = require('./leinwand.js').getContext();
-    
+    var sprite = require('./sprite.js');
+
     // --------------------------------------------------------------------- //
-
-    /*
-        Das ist ein riesen batzen an quelcode, das hier eingefügt wird.
-        Was meinst du, sollte es dennn anders sein.
-
-    */
 
 	ctx.fillStyle = "#111111"
 	ctx.fillRect(0, 0, 500, 300);
 
-	var syms = createSymbols();
+    var spr = new sprite.Sprite('reel_syms.png', run);    
 
-	y_pos = [0,0,0,0,0,0,0,0];
+    function run() {
+        setInterval(drawImage, 16);
+    }
 
+	y_pos = 0;
 	function drawImage() {
 
 		ctx.fillStyle = "#222222"
 		ctx.fillRect(0, 0, 500, 300);
 
-		for(var i=0; i<5; i++) {
-			ctx.drawImage(syms[i], 100, 0, 100, 100, 100*i, y_pos[i],100,100);
-			y_pos[i] += 10 - i;
-
-			if(y_pos[i] > 300)
-				y_pos[i] = -100;
-		}
+		ctx.drawImage(spr.bitmap, 100, 0, 100, 100, 0, y_pos, 100, 100);
 		
-	}
+        y_pos += 10;
 
-	function createSymbols() {
-
-		var syms = [];
-
-		for(var i=0; i<5; i++) {
-			syms[i] = new Image();
-			syms[i].src = "reel_syms.png"
-		}
-
-		syms[0].onload = function() {
-			setInterval(drawImage, 16);
-		}
-
-		return syms;
+		if(y_pos > 300)
+			y_pos = -100;
 	}
 });
