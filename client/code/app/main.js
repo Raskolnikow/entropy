@@ -32,7 +32,7 @@ define(function(require) {
 			ctx.drawImage(syms[i], 100, 0, 100, 100, 100*i, y_pos[i],100,100);
 			y_pos[i] += 10 - i;
 
-			if(y_pos[i] > 400)
+			if(y_pos[i] > 300)
 				y_pos[i] = -100;
 		}
 		
