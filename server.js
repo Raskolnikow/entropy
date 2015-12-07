@@ -13,6 +13,6 @@ app.use(express.static('client/code/lib'));
 app.use(express.static('client/media/graphics'));
 
 
-app.listen(3000, function() {
+app.listen(4444, function() {
 	console.log("server up and running..");
 });

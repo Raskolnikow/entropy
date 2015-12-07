@@ -4,10 +4,12 @@
  */
 define(function(require) {
 	
-	console.log("creating canvas app");
+	var y_pos = 0;
 
 	var ctx = require('./leinwand.js').getContext();
     var sprite = require('./sprite.js');
+
+    console.log("creating canvas app");
 
     // --------------------------------------------------------------------- //
 
@@ -20,7 +22,7 @@ define(function(require) {
         setInterval(drawImage, 16);
     }
 
-	y_pos = 0;
+	
 	function drawImage() {
 
 		ctx.fillStyle = "#222222"
